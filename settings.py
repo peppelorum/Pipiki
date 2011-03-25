@@ -80,7 +80,7 @@ INSTALLED_APPS = (
     # 'sitetree',
     'mptt',
     'treenav',
-    'genericadmin',
+    # 'genericadmin',
 
 )
 

@@ -1,0 +1,92 @@
+{% load article_tags %}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>P Bergqvist - {% block title %}Welcome{% endblock %}</title>
+<!-- 	<link rel="shortcut icon" href="$templateRoot/$templateFavicon" type="image/x-icon" /> -->
+
+
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/ny.css" />
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/stylesheet_no-bg.css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
+	<meta name="description" content="{% block meta-description %}{% endblock %}" />
+	{% block extra-head %}{% endblock %}
+</head>
+
+<body>
+
+	<div id="header"></div>
+
+	<div id="menu">
+
+		{% load treenav_tags %}
+		{% show_treenav 'primary-nav' %}
+
+	</div>
+
+	<div id="catRoot">
+		<div id="cat">
+			<div id="catheader"></div>
+
+			<div id="catmain">
+
+
+				{% block sidebar %}
+				    {% block recent_articles %}
+				    
+				        <h2>Recent Articles</h2>
+				        {% get_articles 10 as recent %}
+				        {% for article in recent %}
+				        {% if forloop.first %}<ul>{% endif %}
+				            <li><a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a></li>
+				        {% if forloop.last %}</ul>{% endif %}
+				        {% endfor %}
+				    
+				    {% endblock %}
+
+				    {% block article_tags %}
+				    <li>
+				        <h2>Tag Cloud</h2>
+				        {% tag_cloud %}
+				    </li>
+				    {% endblock %}
+				{% endblock %}
+
+				
+					<form name="form1" id="form1" method="post" action="$baseURLsearch/">
+						<input type="hidden" name="section" value="search" />
+						<input name="sok" type="text" class="sok" id="sok" onfocus="clear_form(this,'S&ouml;k')" value="S&ouml;k" />
+					</form>
+				
+				<br />
+			</div>
+		</div>
+		<div id="catfooter"></div>
+	</div>
+
+	<div id="outer_wrapper">
+		<div id="wrapper">
+			<div id="container">
+				<div id="content">
+					<div id="main">
+					<div id="blockHUCorner"></div>
+
+
+						{% block content %}{% endblock %}
+
+					</div>
+				</div>
+			</div>
+			<div class="clearing">&nbsp;</div>
+		</div>
+
+
+<div id="footer"></div>
+
+
+
+</body>
+</html>

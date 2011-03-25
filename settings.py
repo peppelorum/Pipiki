@@ -21,6 +21,13 @@ import os
 #   sys.exit(1)
   
 
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = 'babsbasbdsadjaksdbnjasd'
+
+ADMINS = (
+    ('Peppe Bergqvist', 'p@bergqvi.st'),
+)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

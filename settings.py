@@ -78,9 +78,9 @@ INSTALLED_APPS = (
     'articles',
     'south',
     # 'sitetree',
-    # 'mptt',
-    # 'treenav',
-    # 'genericadmin',
+    'mptt',
+    'treenav',
+    'genericadmin',
 
 )
 

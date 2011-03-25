@@ -4,5 +4,6 @@ django-articles==2.1.1
 virtualenv==1.5.1
 yolk==0.4.1
 django-sitetree
+django-treenav
 django-mptt
 -e hg+https://bitbucket.org/knurpsburps/django-genericadmin#egg=DjangoGenericadmin

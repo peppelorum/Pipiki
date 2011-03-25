@@ -6,38 +6,25 @@ import os
 #
 # Put this at the end of settings.py
 
-try:
-  import local_settings
-except ImportError:
-  print """ 
-    -------------------------------------------------------------------------
-    You need to create a local_settings.py file which needs to contain at least
-    database connection information.
+# try:
+#   import local_settings
+# except ImportError:
+#   print """ 
+#     -------------------------------------------------------------------------
+#     You need to create a local_settings.py file which needs to contain at least
+#     database connection information.
     
-    Copy local_settings_example.py to local_settings.py and edit it.
-    -------------------------------------------------------------------------
-    """
-  import sys 
-  sys.exit(1)
+#     Copy local_settings_example.py to local_settings.py and edit it.
+#     -------------------------------------------------------------------------
+#     """
+#   import sys 
+#   sys.exit(1)
   
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
-)
-
 MANAGERS = ADMINS
-
-
-
-# DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-# DATABASE_NAME = 'pipiki.db'             # Or path to database file if using sqlite3.
-# DATABASE_USER = ''             # Not used with sqlite3.
-# DATABASE_PASSWORD = ''         # Not used with sqlite3.
-# DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-# DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 TIME_ZONE = 'Europe/Stockholm'
 
@@ -70,16 +57,6 @@ TEMPLATE_DIRS = (
                  "templates/"
 )
 
-# INSTALLED_APPS = (
-#     'django.contrib.auth',
-#     'django.contrib.contenttypes',
-#     'django.contrib.sessions',
-#     'django.contrib.sites',
-#     'django.contrib.admin',
-#     'django.contrib.admindocs',
-#     'django.contrib.comments',
-#     'blog'
-# )
 
 INSTALLED_APPS = (
     'django.contrib.admin',

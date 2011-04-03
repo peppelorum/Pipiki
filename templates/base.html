@@ -6,6 +6,9 @@
 <head>
 	<title>P Bergqvist - {% block title %}Welcome{% endblock %}</title>
 <!-- 	<link rel="shortcut icon" href="$templateRoot/$templateFavicon" type="image/x-icon" /> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}js/colorbox/colorbox.css" />
+<script src="{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js"></script>
 
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/ny.css" />
@@ -13,7 +16,14 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
 	<meta name="description" content="{% block meta-description %}{% endblock %}" />
-	{% block extra-head %}{% endblock %}
+    {% block extra-head %}{% endblock %}
+    <script> 
+                $(document).ready(function(){
+                    //Examples of how to assign the ColorBox event to elements
+
+                    $("a[class='attachment-link']").colorbox({width:"75%", height:"75%"});
+                });
+    </script>
 </head>
 
 <body>

@@ -8,7 +8,9 @@ django-mptt
 django-shell-plus
 django-debug-toolbar
 django-extensions
+sorl-thumbnail
 -e hg+https://bitbucket.org/knurpsburps/django-genericadmin#egg=DjangoGenericadmin
-# django-articles==2.1.1
 -e git://github.com/peppelorum/django-articles.git#egg=DjangoArticles
-#-e git+ssh://git@github.com:peppelorum/django-articles.git#egg=DjangoArticles
+-e git://github.com/dziegler/django-css.git#egg=DjangoEgg
+
+

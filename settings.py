@@ -46,11 +46,14 @@ INSTALLED_APPS = (
     'django.contrib.syndication',
     
     'articles',
-    # 'south',
+    'south',
     # 'sitetree',
     'mptt',
     'treenav',
     # 'genericadmin',
+    'compressor',
+    'sorl.thumbnail',
+    
 
 )
 

@@ -1,0 +1,58 @@
+{% load i18n humanize %}
+{% load thumbnail %}
+<div id="article-content" class="article">
+    <h1 class="title">{% trans article.title %}</h1>
+    <span id="meta">
+    <p>{% trans 'Published' %}: {{ article.publish_date|naturalday }}</p>
+    <p>{% if article.tags.count %}{% for tag in article.tags.all %}<a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a> {% endfor %}{% else %}None{% endif %}</p>
+    <p>{% trans 'Comments' %}: <a href="#disqus_thread">&nbsp;</a></p>
+    </span>
+
+    {{ article.rendered_content|safe }}
+</div>
+
+
+
+Apor:
+<pre>
+{{ article.attachment_images }}
+</pre>
+<pre>
+{{ article.attachment_non_images }}
+</pre>
+:apor
+{% for att in article.attachment_images %}
+{% if forloop.first %}<div id="article-attachments">
+    <h3>Attachments</h3>
+    <ul>{% endif %}
+
+        
+
+            {% thumbnail att.attachment "100x100" as im %}
+    
+
+                <li id="attachment-{{ forloop.counter }}" class="attachment ct_{{ att.content_type_class }}">
+                    <a href="{{ att.attachment.url }}" class="attachment-link"><img src="{{ im.url }}"></a>
+                    
+                </li>
+
+            {% endthumbnail %}
+        
+    {% if forloop.last %}</ul>
+</div>{% endif %}
+{% endfor %}
+
+{% for att in article.attachment_non_images %}
+{% if forloop.first %}<div id="article-attachments">
+    <h3>Attachments</h3>
+    <ul>{% endif %}
+        
+        <li id="attachment-{{ forloop.counter }}" class="attachment ct_{{ att.content_type_class }}">
+            <a href="{{ att.attachment.url }}" class="attachment-link">{{ att.filename }}</a>
+            <span class="attachment-size">Size: {{ att.attachment.size|filesizeformat }}</span>
+        </li>
+        
+    {% if forloop.last %}</ul>
+</div>{% endif %}
+{% endfor %}
+

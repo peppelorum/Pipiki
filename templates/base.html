@@ -1,29 +1,57 @@
 {% load article_tags %}
+{% load compress %}
 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 	<title>P Bergqvist - {% block title %}Welcome{% endblock %}</title>
-<!-- 	<link rel="shortcut icon" href="$templateRoot/$templateFavicon" type="image/x-icon" /> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
-<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}js/colorbox/colorbox.css" />
-<script src="{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js"></script>
 
-
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/ny.css" />
-	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/stylesheet_no-bg.css" />
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<!-- <meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> -->
+	<meta charset="utf-8" />
 	<meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
 	<meta name="description" content="{% block meta-description %}{% endblock %}" />
-    {% block extra-head %}{% endblock %}
-    <script> 
-                $(document).ready(function(){
-                    //Examples of how to assign the ColorBox event to elements
+	<link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon" />
 
-                    $("a[class='attachment-link']").colorbox({width:"75%", height:"75%"});
-                });
-    </script>
+
+	<script src="{{ MEDIA_URL }}js/head.min.js"></script>
+
+
+	<script>
+		head.js(
+			"https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",
+			"{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js", 
+			"http://use.typekit.com/yso7koy.js", function() {
+	   
+		   // all done
+
+		   try{Typekit.load();}catch(e){};
+		   $("a[class='attachment-link']").colorbox({width:"75%", height:"75%"});
+		   
+		});
+	</script>
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>  -->
+
+<!-- <script src="{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js"></script> -->
+
+<!--  
+	<script type="text/javascript" src="http://use.typekit.com/yso7koy.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+ -->
+
+	
+	{% compress css %}
+	 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}js/colorbox/colorbox.css" />
+		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/ny.css" />
+		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/paper.css" />
+	{% endcompress %}
+ 	
+
+
+
+    {% block extra-head %}{% endblock %}
+
 </head>
 
 <body>

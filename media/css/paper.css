@@ -1,0 +1,66 @@
+header {
+	padding-top:25px; 
+	/*border-bottom:1px solid #ccc; */
+	padding-bottom:20px;
+}
+header .logo {font-size:3.52em;}
+header nav ul li {float:left; margin-top:12px;}
+/*header nav ul li a {display:block; padding:5px 15px; border-right:1px solid #eee; font-size:1.52em; */
+/*font-family:Georgia, "Times New Roman", Times, serif; */
+text-decoration:none;}
+/*header nav ul li a:hover {background-color:#eee; border-right:1px solid #ccc; text-shadow:-1px -1px 0px #fff;}
+header nav ul li.last a {border-right:none;}*/
+
+#css3 div > div {margin:0px 0px 50px 0px; padding:6px; border:1px solid #eee;}
+#grid div {text-align:center;  }
+#grid div > .col {border-bottom:1px solid #ccc; padding:10px 0px; outline:1px solid #eee;}
+
+h2 {
+	/*border-bottom:1px dashed #ccc; */
+	margin-top:15px;
+}
+
+.documentation {display:block; background-color:#eee; padding:6px 13px; font-family:Georgia, "Times New Roman", Times, serif; color:#666; text-align:right; text-shadow:-1px -1px 0px #fff;}
+
+footer {text-align:center; color:#666; font-size:0.9em; padding:4px 0px;}
+
+body, input {
+	/*font: 12px 'PT Serif', sans-serif;*/
+	color: #444;
+	/*line-height: 1.6em;*/
+
+	font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2";
+}
+
+nav {
+	margin-top: 20px;
+}
+
+nav li a {
+	padding: 12px 1.7em;
+	background: white;
+	border-bottom: none;
+	font-size: 85%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	word-spacing: 1px;
+}
+
+#menu ul {
+	list-style: none;
+}
+
+#menu li {
+	display: block;
+	float: left;
+	margin-right: 10px;
+
+}
+
+
+a { text-decoration: none; color: #B29A76}
+a:visited { text-decoration: none; color: #B29A76}
+a:hover { text-decoration: none; color: #000000}
+a:active { text-decoration: none; color: #B29A76}
+
+

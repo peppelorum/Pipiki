@@ -58,6 +58,167 @@ nav li a {
 }
 
 
+body {
+    font-size: 90%;
+    color: #000000;
+    background-image: url("../images/tapet/weird_light.png");
+    background-repeat: repeat;
+    margin: 0px;
+    line-height: 150%;
+}
+
+#header {
+    background: url("../images/tejp/top_3.png") no-repeat;
+    width: 632px;
+    height: 114px;
+    margin-top: 67px;
+    margin-left: 80px;
+}
+
+#outer_wrapper {
+    /*     position: absolute; */
+    left: 200px;
+    width: 729px;
+    background: repeat-x;
+}
+
+ #outer_wrapper #wrapper {
+     background: url("../images/tejp/middle_2.png") repeat-y;
+     width: 729px;
+ }
+
+  #outer_wrapper #wrapper #content {
+      padding-top: 10px
+  }
+
+   #outer_wrapper #wrapper #content #main {
+       position: relative;
+       margin-left: 140px;
+       margin-right: 80px;
+       margin-bottom: -13px;
+   }
+
+#footer {
+    width: 742px;
+    height: 145px;
+    background: url("../images/tejp/bottom_2.png") repeat-y left;
+}
+
+.clearing {
+    height: 0;
+    clear: both;
+}
+
+#menu {
+    position: absolute;
+    width: 300px;
+    height: 12px;
+    z-index: 3;
+    left: 257px;
+    top: 152px;
+}
+
+#catRoot {
+    position: absolute;
+    width: 185px;
+    z-index: 3;
+    left: 747px;
+    top: 122px;
+}
+
+	 #catRoot #catmain {
+	     padding-left: 15px;
+	     padding-right: 10px;
+	     margin-top: -10px;
+	 }
+
+        #catRoot #catmain ul {
+            list-style: none;
+            padding: 0 0 0 10px;
+        }
+
+	 #catRoot #catheader {
+	     background: url("../images/tejp/cat/top.png") no-repeat;
+	     position: absolute;
+	     width: 230px;
+	     height: 36px;
+	     z-index: 1;
+	     left: -25px;
+	     top: -36px;
+	 }
+
+	 #catRoot #catfooter {
+	     background: url("../images/tejp/cat/bottom.png") no-repeat;
+	     width: 185px;
+	     height: 14px;
+	     z-index: 1;
+	 }
+
+	 #catRoot #cat {
+	     background: url("../images/tejp/cat/middle.png") repeat-y;
+	     padding-top: 10px;
+	     width: 185px;
+	 }
+
+.tag-cloud-1 {
+    font-size: 110%;
+}
+
+.tag-cloud-2 {
+    font-size: 120%;
+}
+
+.tag-cloud-3 {
+    font-size: 130%;
+}
+
+.tag-cloud-4 {
+    font-size: 140%;
+}
+
+.tag-cloud-5 {
+    font-size: 150%;
+}
+
+.tag-cloud-6 {
+    font-size: 160%;
+}
+
+.tag-cloud-7 {
+    font-size: 170%;
+}
+
+#meta p {
+    margin: 0;
+}
+
+ul.pagination-pages {
+    list-style: none;
+}
+
+    ul.pagination-pages li {
+        display: block;
+        float: left;
+        margin: 0 5px 0 0;
+    }
+
+    ul.pagination-pages a.current-page {
+        font-weight: bold;
+    }
+
+#article-archives a.collapser {
+    font-weight:bold;
+    cursor: pointer;
+}
+
+#article-archives .months {
+    display: none;
+}
+
+.little {
+    font-size: 80%;
+}
+
 a { text-decoration: none; color: #B29A76}
 a:visited { text-decoration: none; color: #B29A76}
 a:hover { text-decoration: none; color: #000000}

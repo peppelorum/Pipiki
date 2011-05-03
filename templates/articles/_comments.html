@@ -1,0 +1,16 @@
+{% load comments %}
+
+{% if disqus_forum %}
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_developer = {{ disqus_dev }};
+    var disqus_url = '{{ url }}';
+</script>
+<script type="application/javascript" src="http://disqus.com/forums/{{ disqus_forum }}/embed.js"></script>
+<noscript><a href="http://disqus.com/forums/{{ disqus_forum }}/?url=ref">View the discussion thread.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
+{% endif %}
+
+
+{##}
+{#{% render_comment_list for article %}#}

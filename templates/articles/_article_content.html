@@ -4,23 +4,41 @@
     <h1 class="title">{% trans article.title %}</h1>
     <span id="meta">
     <p>{% trans 'Published' %}: {{ article.publish_date|naturalday }}</p>
-    <p>{% if article.tags.count %}{% for tag in article.tags.all %}<a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a> {% endfor %}{% else %}None{% endif %}</p>
+    <p>{% if article.tags.count %}{% trans 'Tags' %}: {% for tag in article.tags.all %}<a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a> {% endfor %}{% else %}None{% endif %}</p>
     <p>{% trans 'Comments' %}: <a href="#disqus_thread">&nbsp;</a></p>
     </span>
+
+    {{ article.attachment_images|length }}
+
+    {% if article.attachment_images|length_is:'1' %}
+        {% for att in article.attachment_images %}
+            {% thumbnail att.attachment "500x800" as im %}
+                <a href="{{ att.attachment.url }}" class="attachment-link"><img src="{{ im.url }}"></a>
+            {% endthumbnail %}
+
+        {% endfor %}
+    {% endif %}
 
     {{ article.rendered_content|safe }}
 </div>
 
 
+{##}
+{##}
+{#Apor:#}
+{#<pre>#}
+{#{{ article.attachments.all }}#}
+{#</pre>#}
+{#<pre>#}
+{#{{ article.attachment_images}}#}
+{#</pre>#}
+{#<pre>#}
+{#{{ article.attachment_non_images }}#}
+{#</pre>#}
+{#:apor#}
 
-Apor:
-<pre>
-{{ article.attachment_images }}
-</pre>
-<pre>
-{{ article.attachment_non_images }}
-</pre>
-:apor
+{% ifnotequal article.attachment_images|length 1 %}
+
 {% for att in article.attachment_images %}
 {% if forloop.first %}<div id="article-attachments">
     <h3>Attachments</h3>
@@ -41,6 +59,8 @@ Apor:
     {% if forloop.last %}</ul>
 </div>{% endif %}
 {% endfor %}
+
+{% endifnotequal %}
 
 {% for att in article.attachment_non_images %}
 {% if forloop.first %}<div id="article-attachments">

@@ -16,7 +16,7 @@
 	<script src="{{ MEDIA_URL }}js/head.min.js"></script>
 
 
-	<script>
+    <script>
 		head.js(
 			"https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",
 			"{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js", 
@@ -40,10 +40,8 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
  -->
 
-	
 	{% compress css %}
 	 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}js/colorbox/colorbox.css" />
-		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/ny.css" />
 		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/paper.css" />
 	{% endcompress %}
  	
@@ -79,17 +77,17 @@
 				        {% get_articles 10 as recent %}
 				        {% for article in recent %}
 				        {% if forloop.first %}<ul>{% endif %}
-				            <li><a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a></li>
+				            <li>- <a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a></li>
 				        {% if forloop.last %}</ul>{% endif %}
 				        {% endfor %}
 				    
 				    {% endblock %}
 
 				    {% block article_tags %}
-				    <li>
+
 				        <h2>Tag Cloud</h2>
 				        {% tag_cloud %}
-				    </li>
+				    
 				    {% endblock %}
 				{% endblock %}
 

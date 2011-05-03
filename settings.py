@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.syndication',
+    'django.contrib.comments',
     
     'articles',
     'south',
@@ -53,6 +54,7 @@ INSTALLED_APPS = (
     # 'genericadmin',
     'compressor',
     'sorl.thumbnail',
+#    'disqus',
     
 
 )

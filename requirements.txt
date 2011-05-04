@@ -13,5 +13,5 @@ BeautifulSoup
 -e hg+https://bitbucket.org/knurpsburps/django-genericadmin#egg=DjangoGenericadmin
 -e git://github.com/peppelorum/django-articles.git#egg=DjangoArticles
 -e git://github.com/dziegler/django-css.git#egg=DjangoEgg
-
+redis
 

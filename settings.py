@@ -9,9 +9,48 @@ LANGUAGE_CODE = 'sv-SE'
 
 SITE_ID = 1
 
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+#MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
+#MEDIA_URL = '/media/'
+#ADMIN_MEDIA_PREFIX = '/media/admin/'
+#
+#STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+#STATIC_URL = '/static/'
+#
+#SERVEMEDIA = True
+
+STATIC_URL = "/static/"
+
 MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
-MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+MEDIA_URL = "/media/"
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'),
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    )
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    )
+
+
+
+#STATIC_URL = "/site_media/static/"
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
+#STATICFILES_DIRS = (
+#    os.path.join(PROJECT_ROOT, "static"),
+#)
+
+COMPRESS_URL = STATIC_URL
 
 
 
@@ -45,6 +84,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.syndication',
     'django.contrib.comments',
+    'django.contrib.staticfiles',
     
     'articles',
     'south',
@@ -63,6 +103,7 @@ INSTALLED_APPS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.media',
+    'django.core.context_processors.static',
 )
 
 

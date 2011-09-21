@@ -10,10 +10,10 @@
 	<meta charset="utf-8" />
 	<meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
 	<meta name="description" content="{% block meta-description %}{% endblock %}" />
-	<link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" type="image/x-icon" />
 
 
-	<script src="{{ MEDIA_URL }}js/head.min.js"></script>
+	<script src="{{ STATIC_URL }}js/head.min.js"></script>
 
 
     <script>
@@ -40,10 +40,10 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
  -->
 
-	{% compress css %}
-	 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}js/colorbox/colorbox.css" />
-		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/paper.css" />
-	{% endcompress %}
+{#	{% compress css %}#}
+	 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/colorbox/colorbox.css" />
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/paper.css" />
+{#	{% endcompress %}#}
  	
 
 

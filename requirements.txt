@@ -1,4 +1,4 @@
-Django==1.2.5
+Django
 South==0.7.3
 virtualenv==1.5.1
 yolk==0.4.1

@@ -1,4 +1,5 @@
 {% load article_tags %}
+{% load treenav_tags %}
 {% load compress %}
 
 <!DOCTYPE html>
@@ -19,15 +20,21 @@
     <script>
 		head.js(
 			"https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",
-			"{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js", 
+{#			"{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js",#}
+            "{{ STATIC_URL }}js/jquery.fittext.js",
 			"http://use.typekit.com/yso7koy.js", function() {
 	   
 		   // all done
 
 		   try{Typekit.load();}catch(e){};
-		   $("a[class='attachment-link']").colorbox({width:"75%", height:"75%"});
+//		   $("a[class='attachment-link']").colorbox({width:"75%", height:"75%"});
 		   
 		});
+
+        head.ready(function() {
+//            $("h1").fitText(1, { minFontSize: '20px', maxFontSize: '40px' });
+            $("h1.title").fitText(1.2, { minFontSize: '10px', maxFontSize: '30px' });
+        });
 	</script>
 
 
@@ -41,9 +48,29 @@
  -->
 
 {#	{% compress css %}#}
-	 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/colorbox/colorbox.css" />
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/paper.css" />
+{#	 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/colorbox/colorbox.css" />#}
+
 {#	{% endcompress %}#}
+
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/globals.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/grid.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/typography.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/app.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/forms.css"/>
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/ie.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/mobile.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/orbit.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/reveal.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/ui.css"/>
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/paper.css" />
+
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
+
  	
 
 
@@ -54,74 +81,121 @@
 
 <body>
 
-	<div id="header"></div>
-
-	<div id="menu">
-
-		{% load treenav_tags %}
-		{% show_treenav 'primary-nav' %}
-
-	</div>
-
-	<div id="catRoot">
-		<div id="cat">
-			<div id="catheader"></div>
-
-			<div id="catmain">
+<div class=container>
+        <div class="row header">
+            <div class="twelve columns">
 
 
-				{% block sidebar %}
-				    {% block recent_articles %}
-				    
-				        <h2>Recent Articles</h2>
-				        {% get_articles 10 as recent %}
-				        {% for article in recent %}
-				        {% if forloop.first %}<ul>{% endif %}
-				            <li>- <a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a></li>
-				        {% if forloop.last %}</ul>{% endif %}
-				        {% endfor %}
-				    
-				    {% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="eight columns content">
+                <span id="vu"></span>
+                <span id="hu"></span>
 
-				    {% block article_tags %}
+                            <a href="/"><h1 class="logo">P Bergqvist</h1></a>
 
-				        <h2>Tag Cloud</h2>
-				        {% tag_cloud %}
-				    
-				    {% endblock %}
-				{% endblock %}
+                {% single_level_menu "start" 6 %}
 
-				
-					<form name="form1" id="form1" method="post" action="$baseURLsearch/">
-						<input type="hidden" name="section" value="search" />
-						<input name="sok" type="text" class="sok" id="sok" onfocus="clear_form(this,'S&ouml;k')" value="S&ouml;k" />
-					</form>
-				
-				<br />
-			</div>
-		</div>
-		<div id="catfooter"></div>
-	</div>
+                {% render_menu_children "start" %}
 
-	<div id="outer_wrapper">
-		<div id="wrapper">
-			<div id="container">
-				<div id="content">
-					<div id="main">
-					<div id="blockHUCorner"></div>
+                {% show_treenav "start" full_tree=True %}
+
+                {{ full_tree }}
 
 
-						{% block content %}{% endblock %}
-
-					</div>
-				</div>
-			</div>
-			<div class="clearing">&nbsp;</div>
-		</div>
+                <!---->
 
 
-<div id="footer"></div>
+                <!--<ul class="menu show-on-desktops">-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<strong>Hej</strong>-->
+                            <!--<span>sadjksadk</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<strong>Projekt</strong>-->
+                            <!--<span>sadjksadk</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<strong>Blog</strong>-->
+                            <!--<span>sadjksadk</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<strong>rsahdjaks dj</strong>-->
+                            <!--<span>sadjksadk</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<strong>Kontakt</strong>-->
+                            <!--<span>sadjksadk</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
 
+                <!--</ul>-->
+
+                <select class="menu show-on-phones">
+                    <option>asjdsad</option>
+                    <option>asjdsad</option>
+                    <option>asjdsad</option>
+                    <option>asjdsad</option>
+                </select>
+
+                {% block content %}{% endblock %}
+            </div>
+            <div class="three columns sidebar">
+                <span class="vu"></span>
+                <span class="hu"></span>
+                {% block sidebar %}
+                {% block recent_articles %}
+
+                    <h2>Recent Articles</h2>
+                    {% get_articles 10 as recent %}
+                    {% for article in recent %}
+                    {% if forloop.first %}
+                    <ul>{% endif %}
+                        <li><a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a>
+                        </li>
+                        {% if forloop.last %}
+                    </ul>
+                    {% endif %}
+                    {% endfor %}
+
+                {% endblock %}
+
+                {% block article_tags %}
+                <ul>
+                <li>
+                    <h2>Tag Cloud</h2>
+                    {% tag_cloud %}
+                </li>
+                </ul>
+
+                {% endblock %}
+                {% endblock %}
+            <span class="bottom"></span>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="twelve columns">
+
+                {% block footer %}
+                <p>Copyright &copy; {% now "Y" %} Me. All rights reserved.</p>
+                {% endblock %}
+            </div>
+        </div>
+
+
+    </div>
 
 
 </body>

@@ -70,7 +70,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-                 "templates/"
+    'templates/',
+    'genericdropdown/templates'
 )
 
 
@@ -99,6 +100,11 @@ INSTALLED_APPS = (
 
 )
 
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+}
+
+
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -124,7 +130,7 @@ except ImportError:
         -------------------------------------------------------------------------
         """
     import sys 
-    sys.exit(1)
+#    sys.exit(1)
 else:
     # Import any symbols that begin with A-Z. Append to lists any symbols that
     # begin with "EXTRA_".

@@ -29,8 +29,11 @@ urlpatterns += patterns('',
     # Uncomment the next line to enable the admin:
 #    (r'admin/(.*)', admin.site.root),
     (r'^admin/', include(admin.site.urls)),
-    url(r'^', include('articles.urls')),
     (r'^treenav/', include('treenav.urls.admin')),
+
+    url(r'^', include('articles.urls')),
+    url(r'^', include('genericdropdown.urls')),
+
 
 )
 

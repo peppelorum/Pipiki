@@ -52,151 +52,151 @@
 
 
 
-body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 90%;
-	color: #000000;
-	background-image: url("images/band/top.png");
-	background-repeat: repeat-x;
-	margin: 0px;
-	line-height: 150%;
-}
+/*body {*/
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	/*font-size: 90%;*/
+	/*color: #000000;*/
+	/*background-image: url("images/band/top.png");*/
+	/*background-repeat: repeat-x;*/
+	/*margin: 0px;*/
+	/*line-height: 150%;*/
+/*}*/
 
-#wrapper {
-	margin: 0pt auto;
-	width: 800px;
-	padding: 0px 0 0 0;
-}
+/*#wrapper {*/
+	/*margin: 0pt auto;*/
+	/*width: 800px;*/
+	/*padding: 0px 0 0 0;*/
+/*}*/
 
-	div#mainwrapper {
-		margin: 30px 0 0 0;
-	}
+	/*div#mainwrapper {*/
+		/*margin: 30px 0 0 0;*/
+	/*}*/
 
-	div#logo{
-		float: left;
-		height: 123px;
-		width: 800px;
-		clear: both;
+	/*div#logo{*/
+		/*float: left;*/
+		/*height: 123px;*/
+		/*width: 800px;*/
+		/*clear: both;*/
 /* 		margin: 0pt auto; */
-		padding: 0 0 19px 0;
-		margin: 0 0 0 40px;
-		background: url("images/band/logo.png") no-repeat;
-	}
+		/*padding: 0 0 19px 0;*/
+		/*margin: 0 0 0 40px;*/
+		/*background: url("images/band/logo.png") no-repeat;*/
+	/*}*/
 
-	div#menu{
+	/*div#menu{*/
 
-	}
-		ul#menubar {
-			text-align: center;
-			list-style: none;
+	/*}*/
+		/*ul#menubar {*/
+			/*text-align: center;*/
+			/*list-style: none;*/
 
-			padding: 0;
-			margin: 0 0 5px 0;
-		}
+			/*padding: 0;*/
+			/*margin: 0 0 5px 0;*/
+		/*}*/
 
-		ul#menubar li {
-			display: inline;
-			font-weight: bold;
-		}
+		/*ul#menubar li {*/
+			/*display: inline;*/
+			/*font-weight: bold;*/
+		/*}*/
 
-		ul#menubar li a {
-			color: #000;
-			display: inline;
-			padding: 7px 10px 6px 10px;
-			
-		}
+		/*ul#menubar li a {*/
+			/*color: #000;*/
+			/*display: inline;*/
+			/*padding: 7px 10px 6px 10px;*/
+			/**/
+		/*}*/
 
-		ul#menubar li a:hover {
-			background: #fff;
-		}
-
-
-	#content {
-		display:block;
-		float: right;
-		width: 580px;
-	}
-
-	#main {
-
-	}
-
-#footer {
-	width: 742px;
-	height: 145px;
-	background: repeat-y left;
-}
-
-h1 {
-	margin-top: 0;
-}
-
-.last {
-	margin-bottom: 0;
-}
-
-.clearing {
-	height: 0;
-	clear: both;
-}
+		/*ul#menubar li a:hover {*/
+			/*background: #fff;*/
+		/*}*/
 
 
+	/*#content {*/
+		/*display:block;*/
+		/*float: right;*/
+		/*width: 580px;*/
+	/*}*/
 
-ul.nodes_by_date, ul.nodes_by_tag {
+	/*#main {*/
+
+	/*}*/
+
+/*#footer {*/
+	/*width: 742px;*/
+	/*height: 145px;*/
+	/*background: repeat-y left;*/
+/*}*/
+
+/*h1 {*/
+	/*margin-top: 0;*/
+/*}*/
+
+/*.last {*/
+	/*margin-bottom: 0;*/
+/*}*/
+
+/*.clearing {*/
+	/*height: 0;*/
+	/*clear: both;*/
+/*}*/
+
+
+
+/*ul.nodes_by_date, ul.nodes_by_tag {*/
 /* 	display: block; */
 /* 	clear: both; */
-	float: left;
-	width: 100%;
-	margin-left: 0;
-	padding: 0;
+	/*float: left;*/
+	/*width: 100%;*/
+	/*margin-left: 0;*/
+	/*padding: 0;*/
 /* 	border: 1px #000 solid; */
-}
+/*}*/
 
-.nodes_by_date li, .nodes_by_tag li {
-	float: left;
-	width: 12em;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
+/*.nodes_by_date li, .nodes_by_tag li {*/
+	/*float: left;*/
+	/*width: 12em;*/
+	/*margin: 0;*/
+	/*padding: 0;*/
+	/*list-style: none;*/
+/*}*/
 
-ul.nodes_by_tag  {
-	line-height: 2.5em;
-	word-spacing: 1.4em;
-}
+/*ul.nodes_by_tag  {*/
+	/*line-height: 2.5em;*/
+	/*word-spacing: 1.4em;*/
+/*}*/
 
-div#nodes_by_most_viewed, div#nodes_by_most_commented {
+/*div#nodes_by_most_viewed, div#nodes_by_most_commented {*/
 
-	float: left;
-	width: 48%;
-	overflow: hidden;
-	margin-left: 0;
-	padding: 0;
-}
+	/*float: left;*/
+	/*width: 48%;*/
+	/*overflow: hidden;*/
+	/*margin-left: 0;*/
+	/*padding: 0;*/
+/*}*/
 
-ul.nodes_by_most_viewed, ul.nodes_by_most_commented {
+/*ul.nodes_by_most_viewed, ul.nodes_by_most_commented {*/
 
-}
+/*}*/
 
 
-.progress_base{
-	width: 75%;
-	background-color: #f0f0f0;
-	padding: 1px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #7b98b5;
-}
+/*.progress_base{*/
+	/*width: 75%;*/
+	/*background-color: #f0f0f0;*/
+	/*padding: 1px;*/
+	/*border-style: solid;*/
+	/*border-width: 1px;*/
+	/*border-color: #7b98b5;*/
+/*}*/
 
-.progress{
-	background-color: #9E9E9E;
-	padding: 2px;
-	color: #ffffff;
-}
+/*.progress{*/
+	/*background-color: #9E9E9E;*/
+	/*padding: 2px;*/
+	/*color: #ffffff;*/
+/*}*/
 
-p.redirect{
-	color: #9E9E9E;
-}
+/*p.redirect{*/
+	/*color: #9E9E9E;*/
+/*}*/
 
 
 

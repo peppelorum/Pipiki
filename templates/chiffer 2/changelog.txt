@@ -1,0 +1,6 @@
+*** Chiffer Changelog ***
+
+
+19 Maj 2011 - Version 1.0
+
+	* First Release

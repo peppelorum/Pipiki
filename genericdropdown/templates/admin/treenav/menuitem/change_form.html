@@ -1,0 +1,88 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+
+{{ block.super }}
+
+<script>
+	(function($){
+
+        $(document).ready(function($) {
+
+           $('input#id_object_id').hide();
+           $('input#id_object_id').after('<select id="generic_object_id"></select>');
+
+           $('select#id_content_type').change(function(){
+               if ($(this).val()) {
+                   $.get("{% url updatecombo %}"+ $(this).val(), { },
+                  function(data){
+                    $('select#generic_object_id option').remove()
+                    $('select#generic_object_id').append(data)
+                  });
+              }
+           })
+
+            //Sets the value of the input-field from the dropdown when change
+            $('body').delegate('select[id^=generic_object_id]', 'change', function(){
+                if ($(this).val()) {
+                    $(this).prev().attr('value', $(this).val())
+                }
+            });
+
+            //Enables the dropdown if using inline admins
+            $('select[name$=-content_type]').each(function() {
+                var arr = $(this).attr('name').split('-');
+//                $('input[name='+ id[0] +'-'+ id[1] +'-object_id]').hide();
+                $('input[name='+ arr[0] +'-'+ arr[1] +'-object_id]').after('<select class="generic_object_id" id="generic_object_id-'+ arr[1] +'"></select>')
+            });
+
+            //Updates the dropdown of objects
+            $('select[id$=\\-content_type]').change(function() {
+                var arr = $(this).attr('name').split('-');
+                if ($(this).val()) {
+                    $.get("{% url updatecombo %}"+ $(this).val(), { },
+                    function(data){
+                        $('select#generic_object_id-'+ arr[1] +' option').remove()
+                        $('select#generic_object_id-'+ arr[1]).append(data)
+                    });
+                }
+            });
+
+
+
+            $('select[id$=content_type]').each(function() {
+                var selector = 'generic_object_id';
+                var arr = $(this).attr('id').split('-');
+//                console.log('def1', $(this), arr, arr.length);
+                if (arr.length > 1) {
+                    selector += '-'+ arr[1]
+                }
+                if ($(this).val()) {
+//                    console.log('get', $(this).val(), selector);
+                    $.get("{% url updatecombo %}"+ $(this).val(), { },
+                    function(data){
+//                        console.log('default', data)
+                        $('select#'+ selector +' option').remove()
+                        $('select#'+ selector).append(data)
+
+                          var selectedIndex =  $('select#'+ selector).prev().val()
+//                        console.log('selectedIndex', selectedIndex)
+//                            selectedIndex = 1
+                          $('select#'+ selector +' option[value='+ selectedIndex +']').attr('selected', 'selected')
+                    });
+                }
+            })
+
+
+
+        })
+    })(django.jQuery);
+
+
+
+
+
+</script>
+
+{% endblock %}

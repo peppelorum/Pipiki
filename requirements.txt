@@ -14,4 +14,4 @@ BeautifulSoup
 -e git://github.com/peppelorum/django-articles.git#egg=DjangoArticles
 -e git://github.com/dziegler/django-css.git#egg=DjangoEgg
 redis
-
+django-markdown

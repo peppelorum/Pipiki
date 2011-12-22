@@ -15,7 +15,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #MEDIA_URL = '/media/'
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
-#STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
 #STATIC_URL = '/static/'
 #
 #SERVEMEDIA = True

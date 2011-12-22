@@ -23,7 +23,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 STATIC_URL = "/static/"
 
 #MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
-MEDIA_ROOT = os.path.join(os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT), 'media')
+MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
 
 MEDIA_URL = "/media/"
 

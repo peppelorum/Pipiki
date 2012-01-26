@@ -1,6 +1,7 @@
 {% load article_tags %}
 {% load treenav_tags %}
 {% load compress %}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -53,23 +54,30 @@
 {#	{% endcompress %}#}
 
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/globals.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/grid.css" />
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/typography.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/app.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/forms.css"/>
+    {% compress css %}
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/ie.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/mobile.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/orbit.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/reveal.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/foundation/stylesheets/ui.css"/>
+        {% get_static_prefix as STATIC_PREFIX %}
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/globals.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/grid.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/typography.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/app.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/forms.css"/>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/paper.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/ie.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/mobile.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/orbit.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/reveal.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/ui.css"/>
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/paper.css" />
 
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
+
+
+    {% endcompress %}
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
 
  	
 
@@ -148,7 +156,9 @@
                     <option>asjdsad</option>
                 </select>
 
-                {% block content %}{% endblock %}
+                {% block content %}
+                    {{ flatpage.content|safe }}
+                {% endblock %}
             </div>
             <div class="three columns sidebar">
                 <span class="vu"></span>
@@ -197,6 +207,18 @@
 
     </div>
 
-
+{#<a title="Real Time Analytics" href="http://getclicky.com/66532007"><img alt="Real Time Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>#}
+<script type="text/javascript">
+    var clicky_site_ids = clicky_site_ids || [];
+    clicky_site_ids.push(66532007);
+    (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//static.getclicky.com/js';
+        ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+    })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66532007ns.gif" /></p></noscript>
 </body>
 </html>

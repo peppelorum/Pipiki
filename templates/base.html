@@ -13,49 +13,26 @@
 	<meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
 	<meta name="description" content="{% block meta-description %}{% endblock %}" />
 	<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" type="image/x-icon" />
-
-
 	<script src="{{ STATIC_URL }}js/head.min.js"></script>
-
-
     <script>
 		head.js(
 			"https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",
 {#			"{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js",#}
             "{{ STATIC_URL }}js/jquery.fittext.js",
-			"http://use.typekit.com/yso7koy.js", function() {
-	   
-		   // all done
+{#			"http://use.typekit.com/yso7koy.js", function() {#}
+{#		        try{Typekit.load();}catch(e){};#}
+{#		}#}
+            function() {
 
-		   try{Typekit.load();}catch(e){};
-//		   $("a[class='attachment-link']").colorbox({width:"75%", height:"75%"});
-		   
-		});
+        }
+        );
 
         head.ready(function() {
-//            $("h1").fitText(1, { minFontSize: '20px', maxFontSize: '40px' });
             $("h1.title").fitText(1.2, { minFontSize: '10px', maxFontSize: '30px' });
         });
 	</script>
 
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>  -->
-
-<!-- <script src="{{ MEDIA_URL }}js/colorbox/colorbox/jquery.colorbox-min.js"></script> -->
-
-<!--  
-	<script type="text/javascript" src="http://use.typekit.com/yso7koy.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
- -->
-
-{#	{% compress css %}#}
-{#	 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/colorbox/colorbox.css" />#}
-
-{#	{% endcompress %}#}
-
-
     {% compress css %}
-
         {% get_static_prefix as STATIC_PREFIX %}
         <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/globals.css"/>
         <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/grid.css" />
@@ -70,18 +47,10 @@
         <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/ui.css"/>
 
         <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/paper.css" />
-
-
-
-
     {% endcompress %}
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
-
- 	
-
-
 
     {% block extra-head %}{% endblock %}
 
@@ -171,7 +140,8 @@
                     {% for article in recent %}
                     {% if forloop.first %}
                     <ul>{% endif %}
-                        <li><a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a>
+                        <li>
+                           <a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a>
                         </li>
                         {% if forloop.last %}
                     </ul>
@@ -215,7 +185,7 @@
         var s = document.createElement('script');
         s.type = 'text/javascript';
         s.async = true;
-        s.src = '//static.getclicky.com/js';
+        s.src = 'http://static.getclicky.com/js';
         ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
     })();
 </script>

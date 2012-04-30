@@ -1,4 +1,4 @@
-Django
+Django==1.3
 South==0.7.3
 virtualenv==1.5.1
 yolk==0.4.1
@@ -12,6 +12,8 @@ sorl-thumbnail
 BeautifulSoup
 -e hg+https://bitbucket.org/knurpsburps/django-genericadmin#egg=DjangoGenericadmin
 -e git://github.com/peppelorum/django-articles.git#egg=DjangoArticles
--e git://github.com/dziegler/django-css.git#egg=DjangoEgg
 redis
 django-markdown
+django-wysiwyg
+-e git://github.com/jezdez/django_compressor.git@develop#egg=django-compressor
+psycopg2==2.4.4

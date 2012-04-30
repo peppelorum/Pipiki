@@ -85,10 +85,10 @@
 
 body {
     /*font-size: 90%;*/
-    font-weight: 300;
+    font-weight: 400;
     font-family: 'Open Sans', sans-serif;
     color: #000000;
-    background-image: url("../images/tapet/weird_light.png");
+    background-image: url("/static/images/tapet/weird_light.png");
     background-repeat: repeat;
     margin: 0px;
     padding-top: 30px;
@@ -122,7 +122,7 @@ h3 {
 }
 
 /*#header {*/
-    /*background: url("../images/tejp/top_3.png") no-repeat;*/
+    /*background: url("/static/images/tejp/top_3.png") no-repeat;*/
     /*width: 632px;*/
     /*height: 114px;*/
     /*margin-top: 67px;*/
@@ -140,7 +140,7 @@ h3 {
 /*}*/
 
  /*#outer_wrapper #wrapper {*/
-     /*background: url("../images/tejp/middle_2.png") repeat-y;*/
+     /*background: url("/static/images/tejp/middle_2.png") repeat-y;*/
      /*width: 729px;*/
  /*}*/
 
@@ -158,7 +158,7 @@ h3 {
 /*#footer {*/
     /*width: 742px;*/
     /*height: 145px;*/
-    /*background: url("../images/tejp/bottom_2.png") repeat-y left;*/
+    /*background: url("/static/images/tejp/bottom_2.png") repeat-y left;*/
 /*}*/
 
 /*.clearing {*/
@@ -201,7 +201,7 @@ h3 {
         position: absolute;
         width: 63px;
         height: 60px;
-        background: url('../images/tejp/hu.png') no-repeat 0 0;
+        background: url('/static/images/tejp/hu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         right: -20px;
@@ -215,7 +215,7 @@ h3 {
         position: absolute;
         width: 65px;
         height: 55px;
-        background: url('../images/tejp/vu.png') no-repeat 0 0;
+        background: url('/static/images/tejp/vu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         left: -20px;
@@ -227,7 +227,7 @@ h3 {
         position: absolute;
         width: 65px;
         height: 55px;
-        background: url('../images/tejp/vu.png') no-repeat 0 0;
+        background: url('/static/images/tejp/vu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         bottom: -25px;
         left: 80px;
@@ -244,7 +244,7 @@ h3 {
         position: absolute;
         width: 65px;
         height: 55px;
-        background: url('../images/tejp/vu.png') no-repeat 0 0;
+        background: url('/static/images/tejp/vu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         left: -25px;
@@ -255,7 +255,7 @@ h3 {
         position: absolute;
         width: 63px;
         height: 60px;
-        background: url('../images/tejp/hu.png') no-repeat 0 0;
+        background: url('/static/images/tejp/hu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         right: -20px;
@@ -292,7 +292,7 @@ h3 {
         /*}*/
 
 	 /*#catRoot #catheader {*/
-	     /*background: url("../images/tejp/cat/top.png") no-repeat;*/
+	     /*background: url("/static/images/tejp/cat/top.png") no-repeat;*/
 	     /*position: absolute;*/
 	     /*width: 230px;*/
 	     /*height: 36px;*/
@@ -302,14 +302,14 @@ h3 {
 	 /*}*/
 
 	 /*#catRoot #catfooter {*/
-	     /*background: url("../images/tejp/cat/bottom.png") no-repeat;*/
+	     /*background: url("/static/images/tejp/cat/bottom.png") no-repeat;*/
 	     /*width: 185px;*/
 	     /*height: 14px;*/
 	     /*z-index: 1;*/
 	 /*}*/
 
 	 /*#catRoot #cat {*/
-	     /*background: url("../images/tejp/cat/middle.png") repeat-y;*/
+	     /*background: url("/static/images/tejp/cat/middle.png") repeat-y;*/
 	     /*padding-top: 10px;*/
 	     /*width: 185px;*/
 	 /*}*/
@@ -378,7 +378,7 @@ h3 {
 }
 
 .author {
-    background-image: url(../images/sprite.png);
+    background-image: url(/static/images/sprite.png);
     background-position: 0 -20px;
     background-repeat: no-repeat;
     padding-left: 20px;
@@ -387,7 +387,7 @@ h3 {
 }
 
 .tags {
-    background-image: url(../images/sprite.png);
+    background-image: url(/static/images/sprite.png);
     background-position: 0 -40px;
     background-repeat: no-repeat;
     padding-left: 20px;
@@ -449,9 +449,63 @@ ul.pagination-pages {
     font-size: 80%;
 }
 
-a { text-decoration: none; border-bottom:1px dotted; color: #9e9081}
+a { text-decoration: none; color: #9e9081}
 a:visited { text-decoration: none; color: #9e9081}
-a:hover { text-decoration: none; border-bottom:0px dotted; color: #9e9081}
+a:hover { text-decoration: none; color: #9e9081}
 a:active { text-decoration: none; color: #9e9081}
 
 
+
+ul, li {
+    padding: 0 0 0 10px;
+}
+
+
+
+/*a {*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*color: black;*/
+    /*background-color: #ffff00;*/
+    /*white-space:nowrap;*/
+    /*-moz-transform: rotate(.8deg) skewx(-12deg);*/
+    /*-webkit-transform: rotate(.8deg) skewx(-12deg);*/
+    /*-webkit-transform: rotate(23deg);*/
+    /*-webkit-transform: rotate(25deg);*/
+
+    /*-moz-box-shadow:3px 0 2px #444;*/
+    /*border:1px dotted #555;*/
+    /*background: -moz-linear-gradient(180deg, #000, #222);*/
+/*}*/
+
+
+/*a::before {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*width: 105%;*/
+    /*height: 100%;*/
+    /*top: -1%;*/
+    /*left: -2%;*/
+    /*z-index: -1;*/
+    /*background: url('/static/images/feltpen.png') repeat 0 0;*/
+    /*-webkit-transform: rotate(.8deg) skewx(-12deg);*/
+/*}*/
+
+
+/*a:nth-child(3n+2)::before {*/
+    /*-webkit-transform: rotate(-.10deg) skewx(50deg) !important;*/
+/*}*/
+
+/* Add a few more selectors with slightly varying styles */
+/*a:first-child {*/
+    /*-moz-transform: rotate(-.8deg);*/
+    /*-webkit-transform: rotate(-.8deg);*/
+/*}*/
+/*.redacted:first-child + .redacted {*/
+    /*-moz-transform: rotate(3deg);*/
+/*}*/
+
+/* Highlight effect */
+/*a::-moz-selection {*/
+    /*background:#e6ff3f;*/
+/*}*/

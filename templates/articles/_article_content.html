@@ -8,8 +8,6 @@
     <p>{% trans 'Comments' %}: <a href="#disqus_thread">&nbsp;</a></p>
     </span>
 
-    {{ article.attachment_images|length }}
-
     {% if article.attachment_images|length_is:'1' %}
         {% for att in article.attachment_images %}
             {% thumbnail att.attachment "500x800" as im %}

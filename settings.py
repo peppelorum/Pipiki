@@ -15,17 +15,13 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #MEDIA_URL = '/media/'
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
-STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
-#STATIC_URL = '/static/'
-#
-#SERVEMEDIA = True
-
-STATIC_URL = "/static/"
+#STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+STATIC_URL = '/static/'
 
 #MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
 MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
 
-MEDIA_URL = "/media/"
+MEDIA_URL = '/media/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -41,6 +37,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
     )
 
 
@@ -51,7 +48,12 @@ STATICFILES_FINDERS = (
 #    os.path.join(PROJECT_ROOT, "static"),
 #)
 
-COMPRESS_URL = STATIC_URL
+COMPRESS_URL = '/static/'
+COMPRESS_OFFLINE_CONTEXT = {
+    'STATIC_URL': STATIC_URL,
+    'MEDIA_URL': MEDIA_URL,
+}
+#COMPRESS_OUTPUT_DIR = '/media/cache'
 
 
 
@@ -66,13 +68,16 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'flatpages.middleware.FlatpageFallbackMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     'templates/',
-    'genericdropdown/templates'
+    'genericdropdown/templates',
+#    'templates/flatpages/',
 )
 
 
@@ -87,7 +92,7 @@ INSTALLED_APPS = (
     'django.contrib.syndication',
     'django.contrib.comments',
     'django.contrib.staticfiles',
-    
+#    'requests',
     'articles',
     'south',
     # 'sitetree',
@@ -97,9 +102,19 @@ INSTALLED_APPS = (
     'compressor',
     'sorl.thumbnail',
 #    'disqus',
+    'flatpages',
+    'django_wysiwyg',
+    'debug_toolbar',
+    'django_extensions',
+#    'compressor',
+#
     
 
 )
+
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+ARTICLES_AUTO_TAG = False
+
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
@@ -114,38 +129,40 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
+
+
 #########################################################################
 # Import settings from local_settings.py, if it exists.
 #
 # Put this at the end of settings.py
 
-try:
-    import local_settings
-except ImportError:
-    print """ 
-        -------------------------------------------------------------------------
-        You need to create a local_settings.py file which needs to contain at least
-        database connection information.
-
-        Copy local_settings_example.py to local_settings.py and edit it.
-        -------------------------------------------------------------------------
-        """
-    import sys 
-#    sys.exit(1)
-else:
-    # Import any symbols that begin with A-Z. Append to lists any symbols that
-    # begin with "EXTRA_".
-    import re
-    for attr in dir(local_settings):
-        # print attr
-        match = re.search('^EXTRA_(\w+)', attr)
-        if match:
-            # print "match"
-            name = match.group(1)
-            value = getattr(local_settings, attr)
-            try:
-                globals()[name] += value
-            except KeyError:
-                globals()[name] = value
-        elif re.search('^[A-Z]', attr):
-            globals()[attr] = getattr(local_settings, attr)  
+#try:
+#    import local_settings
+#except ImportError:
+#    print """
+#        -------------------------------------------------------------------------
+#        You need to create a local_settings.py file which needs to contain at least
+#        database connection information.
+#
+#        Copy local_settings_example.py to local_settings.py and edit it.
+#        -------------------------------------------------------------------------
+#        """
+#    import sys
+##    sys.exit(1)
+#else:
+#    # Import any symbols that begin with A-Z. Append to lists any symbols that
+#    # begin with "EXTRA_".
+#    import re
+#    for attr in dir(local_settings):
+#        # print attr
+#        match = re.search('^EXTRA_(\w+)', attr)
+#        if match:
+#            # print "match"
+#            name = match.group(1)
+#            value = getattr(local_settings, attr)
+#            try:
+#                globals()[name] += value
+#            except KeyError:
+#                globals()[name] = value
+#        elif re.search('^[A-Z]', attr):
+#            globals()[attr] = getattr(local_settings, attr)

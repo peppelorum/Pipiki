@@ -1,7 +1,7 @@
-Django==1.3
-South==0.7.3
-virtualenv==1.5.1
-yolk==0.4.1
+Django
+South
+virtualenv
+yolk
 django-sitetree
 django-treenav
 django-mptt
@@ -10,7 +10,7 @@ django-debug-toolbar
 django-extensions
 sorl-thumbnail
 BeautifulSoup
--e hg+https://bitbucket.org/knurpsburps/django-genericadmin#egg=DjangoGenericadmin
+#-e hg+https://bitbucket.org/knurpsburps/django-genericadmin#egg=DjangoGenericadmin
 -e git://github.com/peppelorum/django-articles.git#egg=DjangoArticles
 redis
 django-markdown

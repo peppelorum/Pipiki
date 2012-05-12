@@ -166,3 +166,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 #                globals()[name] = value
 #        elif re.search('^[A-Z]', attr):
 #            globals()[attr] = getattr(local_settings, attr)
+
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

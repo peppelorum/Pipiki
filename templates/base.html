@@ -33,20 +33,20 @@
 	</script>
 
     {% compress css %}
-        {% get_static_prefix as STATIC_PREFIX %}
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/globals.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/grid.css" />
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/typography.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/app.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/forms.css"/>
+{#        {% get_static_prefix as STATIC_PREFIX %}#}
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/globals.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/grid.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/typography.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/app.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/forms.css"/>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/ie.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/mobile.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/orbit.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/reveal.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/ui.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/ie.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/mobile.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/orbit.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/reveal.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/ui.css"/>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/css/paper.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/paper.css" />
     {% endcompress %}
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>

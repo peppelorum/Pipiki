@@ -12,8 +12,8 @@
 	<meta charset="utf-8" />
 	<meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
 	<meta name="description" content="{% block meta-description %}{% endblock %}" />
-	<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" type="image/x-icon" />
-	<script src="{{ STATIC_URL }}js/head.min.js"></script>
+	<link rel="shortcut icon" href="{{ STATIC_URL }}../pipiki/static/images/favicon.ico" type="image/x-icon" />
+	<script src="{{ STATIC_URL }}../pipiki/static/js/head.min.js"></script>
     <script>
 		head.js(
 			"https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",
@@ -34,19 +34,19 @@
 
     {% compress css %}
         {% get_static_prefix as STATIC_PREFIX %}
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/globals.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/grid.css" />
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/typography.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/app.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/forms.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/globals.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/grid.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/typography.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/app.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/forms.css"/>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/ie.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/mobile.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/orbit.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/reveal.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/ui.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/ie.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/mobile.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/orbit.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/reveal.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/foundation/stylesheets/ui.css"/>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/paper.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}../pipiki/static/css/paper.css" />
     {% endcompress %}
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>

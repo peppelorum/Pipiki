@@ -15,7 +15,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #MEDIA_URL = '/media/'
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
-#STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
 STATIC_URL = '/static/'
 
 #MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
@@ -25,7 +25,7 @@ MEDIA_URL = '/media/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'),
+    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki/static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -48,13 +48,16 @@ STATICFILES_FINDERS = (
 #    os.path.join(PROJECT_ROOT, "static"),
 #)
 
-COMPRESS_URL = '/static/'
+COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/'
+STATIC_URL = COMPRESS_URL
+#COMPRESS_URL = '/static/'
 COMPRESS_OFFLINE_CONTEXT = {
     'STATIC_URL': STATIC_URL,
     'MEDIA_URL': MEDIA_URL,
 }
 #COMPRESS_OUTPUT_DIR = '/media/cache'
-
+COMPRESS_STORAGE = 'storages.backends.ftp.FTPStorage'
+FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE')
 
 
 # List of callables that know how to import templates from various sources.
@@ -106,11 +109,13 @@ INSTALLED_APPS = (
     'django_wysiwyg',
     'debug_toolbar',
     'django_extensions',
+    'storages',
 #    'compressor',
 #
     
 
 )
+
 
 DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 ARTICLES_AUTO_TAG = False

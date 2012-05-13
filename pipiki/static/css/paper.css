@@ -1,0 +1,511 @@
+/*header {*/
+	/*padding-top:25px; */
+	/*border-bottom:1px solid #ccc; */
+	/*padding-bottom:20px;*/
+/*}*/
+/*header .logo {font-size:3.52em;}*/
+/*header nav ul li {float:left; margin-top:12px;}*/
+/*header nav ul li a {display:block; padding:5px 15px; border-right:1px solid #eee; font-size:1.52em; */
+/*font-family:Georgia, "Times New Roman", Times, serif; */
+/*text-decoration:none;}*/
+/*header nav ul li a:hover {background-color:#eee; border-right:1px solid #ccc; text-shadow:-1px -1px 0px #fff;}*/
+/*header nav ul li.last a {border-right:none;}*/
+
+/*#css3 div > div {margin:0px 0px 50px 0px; padding:6px; border:1px solid #eee;}*/
+/*#grid div {text-align:center;  }*/
+/*#grid div > .col {border-bottom:1px solid #ccc; padding:10px 0px; outline:1px solid #eee;}*/
+
+/*h2 {*/
+	/*border-bottom:1px dashed #ccc; */
+	/*margin-top:15px;*/
+/*}*/
+
+/*.documentation {display:block; background-color:#eee; padding:6px 13px; font-family:Georgia, "Times New Roman", Times, serif; color:#666; text-align:right; text-shadow:-1px -1px 0px #fff;}*/
+
+/*footer {text-align:center; color:#666; font-size:0.9em; padding:4px 0px;}*/
+
+/*body, input {*/
+	/*font: 12px 'PT Serif', sans-serif;*/
+	/*color: #444;*/
+	/*line-height: 1.6em;*/
+
+	/*font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2";*/
+
+    /*font-family: 'Open Sans', sans-serif;*/
+/*}*/
+
+/*nav {*/
+	/*margin-top: 20px;*/
+/*}*/
+
+/*nav li a {*/
+	/*padding: 12px 1.7em;*/
+	/*background: white;*/
+	/*border-bottom: none;*/
+	/*font-size: 85%;*/
+	/*text-transform: uppercase;*/
+	/*letter-spacing: 1px;*/
+	/*word-spacing: 1px;*/
+/*}*/
+
+/*#menu ul {*/
+	/*list-style: none;*/
+/*}*/
+
+/*#menu li {*/
+	/*display: block;*/
+	/*float: left;*/
+	/*margin-right: 10px;*/
+
+/*}*/
+
+
+
+/* float clearing for IE6 */
+* html .clearfix{
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html .clearfix{
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+.clearfix:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
+
+body {
+    /*font-size: 90%;*/
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+    background-image: url("/pipiki/static/images/images/tapet/weird_light.png");
+    background-repeat: repeat;
+    margin: 0px;
+    padding-top: 30px;
+    line-height: 150%;
+}
+
+h1 {
+/*, h2, h3, h4, h5 {*/
+        /*font-family: 'Ultra', serif;*/
+    display: block;
+    font-weight: 300;
+    font-size: 3rem;
+    width: 100%;
+
+}
+
+h1.logo {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #000;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+/*#header {*/
+    /*background: url("/static/images/tejp/top_3.png") no-repeat;*/
+    /*width: 632px;*/
+    /*height: 114px;*/
+    /*margin-top: 67px;*/
+    /*margin-left: 80px;*/
+/*}*/
+
+/*#outer_wrapper {*/
+    /*     position: absolute; */
+    /*left: 200px;*/
+    /*width: 729px;*/
+    /*background: repeat-x #fff;*/
+    /*-webkit-box-shadow: 0px 0px 4px 0px #000000;*/
+    /*-moz-box-shadow: 0px 0px 4px 0px #000000;*/
+    /*box-shadow: 0px 0px 4px 0px #000000;*/
+/*}*/
+
+ /*#outer_wrapper #wrapper {*/
+     /*background: url("/static/images/tejp/middle_2.png") repeat-y;*/
+     /*width: 729px;*/
+ /*}*/
+
+  /*#outer_wrapper #wrapper #content {*/
+      /*padding-top: 10px*/
+  /*}*/
+
+   /*#outer_wrapper #wrapper #content #main {*/
+       /*position: relative;*/
+       /*margin-left: 140px;*/
+       /*margin-right: 80px;*/
+       /*margin-bottom: -13px;*/
+   /*}*/
+
+/*#footer {*/
+    /*width: 742px;*/
+    /*height: 145px;*/
+    /*background: url("/static/images/tejp/bottom_2.png") repeat-y left;*/
+/*}*/
+
+/*.clearing {*/
+    /*height: 0;*/
+    /*clear: both;*/
+/*}*/
+
+/*#menu {*/
+    /*position: absolute;*/
+    /*width: 300px;*/
+    /*height: 12px;*/
+    /*z-index: 3;*/
+    /*left: 257px;*/
+    /*top: 152px;*/
+/*}*/
+
+.content, .sidebar {
+    /*position: absolute;*/
+    /*width: 185px;*/
+    /*z-index: 3;*/
+    /*left: 747px;*/
+    /*top: 122px;*/
+    position: relative;
+    background: #fff;
+    padding: 20px 10px 20px 10px;
+    margin: 10px 20px 10px 0;
+
+    -webkit-box-shadow: 0px 0px 4px 0px #000000;
+    -moz-box-shadow: 0px 0px 4px 0px #000000;
+    box-shadow: 0px 0px 4px 0px #000000;
+}
+
+
+.sidebar {
+    -webkit-transform:  rotate(0.5deg);
+    -moz-transform: rotate(0.5deg);
+}
+
+    .sidebar .hu {
+        position: absolute;
+        width: 63px;
+        height: 60px;
+        background: url('/pipiki/static/images/images/tejp/hu.png') no-repeat 0 0;
+        /*border: 1px solid #000;*/
+        top: -25px;
+        right: -20px;
+            -webkit-transform:  rotate(20deg);
+        -moz-transform: rotate(0.5deg);
+
+    }
+
+
+    .sidebar .vu {
+        position: absolute;
+        width: 65px;
+        height: 55px;
+        background: url('/pipiki/static/images/images/tejp/vu.png') no-repeat 0 0;
+        /*border: 1px solid #000;*/
+        top: -25px;
+        left: -20px;
+            -webkit-transform:  rotate(5deg);
+        -moz-transform: rotate(0.5deg);
+    }
+
+    .sidebar .bottom {
+        position: absolute;
+        width: 65px;
+        height: 55px;
+        background: url('/pipiki/static/images/images/tejp/vu.png') no-repeat 0 0;
+        /*border: 1px solid #000;*/
+        bottom: -25px;
+        left: 80px;
+            -webkit-transform:  rotate(-32deg);
+        -moz-transform: rotate(0.5deg);
+    }
+
+
+.content {
+    padding: 30px;
+}
+
+    .content #vu {
+        position: absolute;
+        width: 65px;
+        height: 55px;
+        background: url('/pipiki/static/images/images/tejp/vu.png') no-repeat 0 0;
+        /*border: 1px solid #000;*/
+        top: -25px;
+        left: -25px;
+
+    }
+
+    .content #hu {
+        position: absolute;
+        width: 63px;
+        height: 60px;
+        background: url('/pipiki/static/images/images/tejp/hu.png') no-repeat 0 0;
+        /*border: 1px solid #000;*/
+        top: -25px;
+        right: -20px;
+
+    }
+
+
+.menu {
+    margin-bottom: 12px;
+}
+
+.menu li {
+    display: block;
+    float: left;
+    padding: 2px 5px;
+    margin-bottom: 0;
+    border-left: 1px solid #f0f0f0;
+}
+
+.menu li:first-child {
+    border-left: 0px;
+}
+
+
+	 /*#catRoot #catmain {*/
+	     /*padding-left: 15px;*/
+	     /*padding-right: 10px;*/
+	     /*margin-top: -10px;*/
+	 /*}*/
+
+        /*#catRoot #catmain ul {*/
+            /*list-style: none;*/
+            /*padding: 0 0 0 10px;*/
+        /*}*/
+
+	 /*#catRoot #catheader {*/
+	     /*background: url("/static/images/tejp/cat/top.png") no-repeat;*/
+	     /*position: absolute;*/
+	     /*width: 230px;*/
+	     /*height: 36px;*/
+	     /*z-index: 1;*/
+	     /*left: -25px;*/
+	     /*top: -36px;*/
+	 /*}*/
+
+	 /*#catRoot #catfooter {*/
+	     /*background: url("/static/images/tejp/cat/bottom.png") no-repeat;*/
+	     /*width: 185px;*/
+	     /*height: 14px;*/
+	     /*z-index: 1;*/
+	 /*}*/
+
+	 /*#catRoot #cat {*/
+	     /*background: url("/static/images/tejp/cat/middle.png") repeat-y;*/
+	     /*padding-top: 10px;*/
+	     /*width: 185px;*/
+	 /*}*/
+
+/*.tag-cloud-1 {*/
+    /*font-size: 110%;*/
+/*}*/
+
+/*.tag-cloud-2 {*/
+    /*font-size: 120%;*/
+/*}*/
+
+/*.tag-cloud-3 {*/
+    /*font-size: 130%;*/
+/*}*/
+
+/*.tag-cloud-4 {*/
+    /*font-size: 140%;*/
+/*}*/
+
+/*.tag-cloud-5 {*/
+    /*font-size: 150%;*/
+/*}*/
+
+/*.tag-cloud-6 {*/
+    /*font-size: 160%;*/
+/*}*/
+
+/*.tag-cloud-7 {*/
+    /*font-size: 170%;*/
+/*}*/
+
+
+
+
+.tag-cloud-0 {
+    font-size: 100%;
+}
+
+.tag-cloud-1 {
+    font-size: 1.2rem;
+}
+
+.tag-cloud-2 {
+    font-size: 1.4rem;
+}
+
+.tag-cloud-3 {
+    font-size: 1.6rem;
+}
+
+.tag-cloud-4 {
+    font-size: 1.8rem;
+}
+
+.tag-cloud-5 {
+    font-size: 2rem;
+}
+
+.tag-cloud-6 {
+    font-size: 2.2rem;
+}
+
+.tag-cloud-7 {
+    font-size: 2.4rem;
+}
+
+.author {
+    background-image: url(/pipiki/static/images/sprite.png);
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.tags {
+    background-image: url(/pipiki/static/images/sprite.png);
+    background-position: 0 -40px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+div.date {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    float: left;
+}
+
+    .date p {
+        font-size: 1rem;
+        line-height: 14px;
+        padding-top: 15px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+        .date p span {
+            display: block;
+            font-size: 1.6rem;
+            text-transform: lowercase;
+        }
+
+
+#meta p {
+    margin: 0;
+}
+
+ul.pagination-pages {
+    list-style: none;
+}
+
+    ul.pagination-pages li {
+        display: block;
+        float: left;
+        margin: 0 5px 0 0;
+    }
+
+    ul.pagination-pages a.current-page {
+        font-weight: bold;
+    }
+
+#article-archives a.collapser {
+    font-weight:bold;
+    cursor: pointer;
+}
+
+#article-archives .months {
+    display: none;
+}
+
+.little {
+    font-size: 80%;
+}
+
+a { text-decoration: none; color: #9e9081}
+a:visited { text-decoration: none; color: #9e9081}
+a:hover { text-decoration: none; color: #9e9081}
+a:active { text-decoration: none; color: #9e9081}
+
+
+
+ul, li {
+    padding: 0 0 0 10px;
+}
+
+
+
+/*a {*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*color: black;*/
+    /*background-color: #ffff00;*/
+    /*white-space:nowrap;*/
+    /*-moz-transform: rotate(.8deg) skewx(-12deg);*/
+    /*-webkit-transform: rotate(.8deg) skewx(-12deg);*/
+    /*-webkit-transform: rotate(23deg);*/
+    /*-webkit-transform: rotate(25deg);*/
+
+    /*-moz-box-shadow:3px 0 2px #444;*/
+    /*border:1px dotted #555;*/
+    /*background: -moz-linear-gradient(180deg, #000, #222);*/
+/*}*/
+
+
+/*a::before {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*width: 105%;*/
+    /*height: 100%;*/
+    /*top: -1%;*/
+    /*left: -2%;*/
+    /*z-index: -1;*/
+    /*background: url('/static/images/feltpen.png') repeat 0 0;*/
+    /*-webkit-transform: rotate(.8deg) skewx(-12deg);*/
+/*}*/
+
+
+/*a:nth-child(3n+2)::before {*/
+    /*-webkit-transform: rotate(-.10deg) skewx(50deg) !important;*/
+/*}*/
+
+/* Add a few more selectors with slightly varying styles */
+/*a:first-child {*/
+    /*-moz-transform: rotate(-.8deg);*/
+    /*-webkit-transform: rotate(-.8deg);*/
+/*}*/
+/*.redacted:first-child + .redacted {*/
+    /*-moz-transform: rotate(3deg);*/
+/*}*/
+
+/* Highlight effect */
+/*a::-moz-selection {*/
+    /*background:#e6ff3f;*/
+/*}*/

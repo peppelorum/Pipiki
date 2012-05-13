@@ -17,3 +17,4 @@ django-markdown
 django-wysiwyg
 -e git://github.com/jezdez/django_compressor.git@develop#egg=django-compressor
 psycopg2==2.4.4
+django-storages

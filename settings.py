@@ -16,7 +16,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
 STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
-STATIC_URL = 'http://cdn.bergqvi.st/cdn/pipiki/static/'
+STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 
 MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
 #MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
@@ -44,7 +44,7 @@ STATICFILES_FINDERS = (
 #    os.path.join(PROJECT_ROOT, "static"),
 #)
 
-COMPRESS_URL = 'http://cdn.bergqvi.st/cdn/pipiki/'
+COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/'
 STATIC_URL = COMPRESS_URL
 #COMPRESS_URL = '/static/'
 #COMPRESS_OFFLINE_CONTEXT = {
@@ -56,8 +56,8 @@ COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
 COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki/static')
 #COMPRESS_OUTPUT_DIR = '/media/cache'
-#COMPRESS_STORAGE = 'pipiki.storage.CachedFTPStorage'
-#FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
+COMPRESS_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
 
 
 # List of callables that know how to import templates from various sources.

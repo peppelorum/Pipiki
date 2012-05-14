@@ -44,7 +44,7 @@ STATICFILES_FINDERS = (
 #    os.path.join(PROJECT_ROOT, "static"),
 #)
 
-COMPRESS_URL = 'http://s3djangotest.s3-website-eu-west-1.amazonaws.com/'
+COMPRESS_URL = 'http://cdn.bergqvi.st/cdn/pipiki/'
 STATIC_URL = COMPRESS_URL
 #COMPRESS_URL = '/static/'
 #COMPRESS_OFFLINE_CONTEXT = {

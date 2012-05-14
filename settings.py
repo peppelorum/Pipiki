@@ -54,8 +54,8 @@ STATIC_URL = COMPRESS_URL
 #}
 
 COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = True
-COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki/static')
+#COMPRESS_OFFLINE = True
+COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
 #COMPRESS_OUTPUT_DIR = '/media/cache'
 COMPRESS_STORAGE = 'pipiki.storage.CachedSFTPStorage'
 FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')

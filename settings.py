@@ -1,4 +1,5 @@
 import os
+from urlparse import urlparse
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -141,6 +142,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
+if os.environ.has_key('FTPSTORAGE'):
+    url = urlparse(os.getenv('FTPSTORAGE'))
+
+    SFTP_STORAGE_HOST = url.hostname
+    SFTP_STORAGE_ROOT = url.path
+    SFTP_STORAGE_PARAMS = {
+        'username': url.username,
+        'password': url.password
+    }
 
 
 #########################################################################

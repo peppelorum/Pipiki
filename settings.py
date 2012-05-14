@@ -16,10 +16,10 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
 STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
-STATIC_URL = '/static/'
+STATIC_URL = 'http://cdn.bergqvi.st/cdn/pipiki/static/'
 
-#MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
-MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
+MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
+#MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
 
 MEDIA_URL = '/media/'
 
@@ -29,18 +29,14 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    )
+)
 
-# List of finder classes that know how to find static files in
-# various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
-    )
-
-
+)
 
 #STATIC_URL = "/site_media/static/"
 #STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
@@ -48,23 +44,32 @@ STATICFILES_FINDERS = (
 #    os.path.join(PROJECT_ROOT, "static"),
 #)
 
-COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/'
+COMPRESS_URL = 'http://s3djangotest.s3-website-eu-west-1.amazonaws.com/'
 STATIC_URL = COMPRESS_URL
 #COMPRESS_URL = '/static/'
-COMPRESS_OFFLINE_CONTEXT = {
-    'STATIC_URL': STATIC_URL,
-    'MEDIA_URL': MEDIA_URL,
-}
+#COMPRESS_OFFLINE_CONTEXT = {
+#    'STATIC_URL': STATIC_URL,
+#    'MEDIA_URL': MEDIA_URL,
+#}
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
 #COMPRESS_OUTPUT_DIR = '/media/cache'
-COMPRESS_STORAGE = 'storages.backends.ftp.FTPStorage'
-FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE')
+#COMPRESS_STORAGE = 'pipiki.storage.CachedFTPStorage'
+#FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
 
 
 # List of callables that know how to import templates from various sources.
+#TEMPLATE_LOADERS = (
+#    'django.template.loaders.filesystem.load_template_source',
+#    'django.template.loaders.app_directories.load_template_source',
+##     'django.template.loaders.eggs.load_template_source',
+#)
+
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    "django.template.loaders.filesystem.Loader",
+    "django.template.loaders.app_directories.Loader"
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,9 +83,11 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    'templates/',
-    'genericdropdown/templates',
+#    'templates/',
+#    'genericdropdown/templates',
 #    'templates/flatpages/',
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), 'genericdropdown/templates').replace('\\','/'),
 )
 
 
@@ -102,7 +109,7 @@ INSTALLED_APPS = (
     'mptt',
     'treenav',
     # 'genericadmin',
-    'compressor',
+#    'compressor',
     'sorl.thumbnail',
 #    'disqus',
     'flatpages',
@@ -110,7 +117,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'django_extensions',
     'storages',
-#    'compressor',
+    'compressor',
 #
     
 

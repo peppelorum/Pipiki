@@ -33,20 +33,20 @@
 	</script>
 
     {% compress css %}
-{#        {% get_static_prefix as STATIC_PREFIX %}#}
+        {% get_static_prefix as STATIC_PREFIX %}
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/globals.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/grid.css" />
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/typography.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/app.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/forms.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/grid.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/typography.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/app.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/forms.css"/>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/ie.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/mobile.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/orbit.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/reveal.css"/>
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}foundation/stylesheets/ui.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/ie.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/mobile.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/orbit.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/reveal.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}foundation/stylesheets/ui.css"/>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/paper.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/paper.css" />
     {% endcompress %}
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>

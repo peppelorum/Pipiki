@@ -80,7 +80,7 @@
   height: 0;
   visibility: hidden;
   font-size: 0;
-    /**/
+
 }
 
 
@@ -89,7 +89,7 @@ body {
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
     color: #000000;
-    background-image: url("/pipiki/static/images/images/tapet/weird_light.png");
+    background-image: url("/pipiki/static/images/tapet/weird_light.png");
     background-repeat: repeat;
     margin: 0px;
     padding-top: 30px;
@@ -202,7 +202,7 @@ h3 {
         position: absolute;
         width: 63px;
         height: 60px;
-        background: url('/pipiki/static/images/images/tejp/hu.png') no-repeat 0 0;
+        background: url('/pipiki/static/images/tejp/hu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         right: -20px;
@@ -216,7 +216,7 @@ h3 {
         position: absolute;
         width: 65px;
         height: 55px;
-        background: url('/pipiki/static/images/images/tejp/vu.png') no-repeat 0 0;
+        background: url('/pipiki/static/images/tejp/vu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         left: -20px;
@@ -228,7 +228,7 @@ h3 {
         position: absolute;
         width: 65px;
         height: 55px;
-        background: url('/pipiki/static/images/images/tejp/vu.png') no-repeat 0 0;
+        background: url('/pipiki/static/images/tejp/vu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         bottom: -25px;
         left: 80px;
@@ -245,7 +245,7 @@ h3 {
         position: absolute;
         width: 65px;
         height: 55px;
-        background: url('/pipiki/static/images/images/tejp/vu.png') no-repeat 0 0;
+        background: url('/pipiki/static/images/tejp/vu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         left: -25px;
@@ -256,7 +256,7 @@ h3 {
         position: absolute;
         width: 63px;
         height: 60px;
-        background: url('/pipiki/static/images/images/tejp/hu.png') no-repeat 0 0;
+        background: url('/pipiki/static/images/tejp/hu.png') no-repeat 0 0;
         /*border: 1px solid #000;*/
         top: -25px;
         right: -20px;

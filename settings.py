@@ -59,8 +59,12 @@ COMPRESS_OFFLINE = True
 COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki/static')
 #COMPRESS_OUTPUT_DIR = '/media/cache'
 #COMPRESS_STORAGE = 'pipiki.storage.CachedSFTPStorage'
-STATICFILES_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
+#STATICFILES_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
+
+STATICFILES_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+
 FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
 
 

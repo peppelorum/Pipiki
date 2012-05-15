@@ -46,7 +46,7 @@ STATICFILES_FINDERS = (
 #    os.path.join(PROJECT_ROOT, "static"),
 #)
 
-COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/'
+COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 #STATIC_URL = COMPRESS_URL
 #COMPRESS_URL = '/static/'
 #COMPRESS_OFFLINE_CONTEXT = {

@@ -26,6 +26,7 @@ MEDIA_URL = '/media/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+#    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static'),
     os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -55,9 +56,9 @@ COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/'
 
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
-COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki/static')
 #COMPRESS_OUTPUT_DIR = '/media/cache'
-COMPRESS_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+#COMPRESS_STORAGE = 'pipiki.storage.CachedSFTPStorage'
 STATICFILES_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
 FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
 

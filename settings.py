@@ -64,11 +64,11 @@ COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki
 #STATICFILES_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
 #DEFAULT_FILE_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
 
-#STATICFILES_STORAGE = 'pipiki.storage.CachedSFTPStorage'
-#DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+STATICFILES_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
 

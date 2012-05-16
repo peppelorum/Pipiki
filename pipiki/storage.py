@@ -34,11 +34,27 @@ class CachedSFTPStorage(SFTPStorage):
         self.local_storage._save(name, content)
         return name
 
-    def path(self, name):
-        return None
-        print self.local_storage.path(name)
-        return self.local_storage.path(name)
+#    def path(self, name):
+#        return None
+#        print self.local_storage.path(name)
+#        return self.local_storage.path(name)
 
+    def _mkdir(self, path):
+        """Create directory, recursing up to create parent dirs if
+        necessary."""
+
+        print 'path', path
+        parent = self._pathmod.dirname(path)
+        print 'parent', parent
+#        if not self.exists(parent):
+#            self._mkdir(parent)
+        self.sftp.mkdir(path)
+
+        if self._dir_mode is not None:
+            self.sftp.chmod(path, self._dir_mode)
+
+        if self._uid or self._gid:
+            self._chown(path, uid=self._uid, gid=self._gid)
 
 
 

@@ -58,4 +58,5 @@ class CachedS3BotoStorage(S3BotoStorage):
         return name
 
     def path(self, name):
-        return self.local_storage.path(name)
+        return None
+#        return self.local_storage.path(name)

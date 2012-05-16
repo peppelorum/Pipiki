@@ -17,7 +17,8 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
 STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
-STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
+#STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
+STATIC_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
 
 MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
 #MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
@@ -46,7 +47,8 @@ STATICFILES_FINDERS = (
 #    os.path.join(PROJECT_ROOT, "static"),
 #)
 
-COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/static/'
+#COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/static/'
+COMPRESS_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
 #STATIC_URL = COMPRESS_URL
 #COMPRESS_URL = '/static/'
 #COMPRESS_OFFLINE_CONTEXT = {
@@ -62,10 +64,18 @@ COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki
 #STATICFILES_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
 #DEFAULT_FILE_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
 
-STATICFILES_STORAGE = 'pipiki.storage.CachedSFTPStorage'
-DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+#STATICFILES_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+#DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+
+STATICFILES_STORAGE = 'pipiki.storage.CachedS3BotoStorage'
+DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedS3BotoStorage'
 
 FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
+
+if os.environ.has_key('AWS_ACCESS_KEY_ID'):
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 
 
 # List of callables that know how to import templates from various sources.

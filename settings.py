@@ -13,6 +13,7 @@ SITE_ID = 1
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 #MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
+MEDIA_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "media")
 #MEDIA_URL = '/media/'
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
@@ -168,6 +169,7 @@ if os.environ.has_key('FTPSTORAGE'):
         'username': url.username,
         'password': url.password
     }
+    SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
 
 
 if os.environ.has_key('EMAIL_HOST'):

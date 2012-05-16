@@ -35,7 +35,7 @@ class CachedSFTPStorage(SFTPStorage):
         return name
 
     def path(self, name):
-#        return None
+        return None
         print self.local_storage.path(name)
         return self.local_storage.path(name)
 

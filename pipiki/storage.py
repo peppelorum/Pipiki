@@ -46,8 +46,8 @@ class CachedSFTPStorage(SFTPStorage):
         print 'path', path
         parent = self._pathmod.dirname(path)
         print 'parent', parent
-#        if not self.exists(parent):
-#            self._mkdir(parent)
+        if not self.exists(parent):
+            self._mkdir(parent)
         self.sftp.mkdir(path)
 
         if self._dir_mode is not None:

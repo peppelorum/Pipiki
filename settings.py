@@ -171,10 +171,10 @@ if os.environ.has_key('FTPSTORAGE'):
     }
     SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
 
-    if not os.path.exists(os.path.join(MEDIA_ROOT, "ssh")):
-        os.makedirs(os.path.join(MEDIA_ROOT, "ssh"))
-        f = file(SFTP_KNOWN_HOST_FILE, "w")
-        f.close()
+#    if not os.path.exists(os.path.join(MEDIA_ROOT, "ssh")):
+#        os.makedirs(os.path.join(MEDIA_ROOT, "ssh"))
+#        f = file(SFTP_KNOWN_HOST_FILE, "w")
+#        f.close()
 
 
 if os.environ.has_key('EMAIL_HOST'):

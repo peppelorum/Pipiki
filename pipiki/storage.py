@@ -36,16 +36,16 @@ class CachedSFTPStorage(SFTPStorage):
         self._ssh = paramiko.SSHClient()
 
         if self._known_host_file is not None:
-#            print 'sadsad', self._known_host_file
+            print 'sadsad', self._known_host_file
 #            path = self._known_host_file.split('/')
-#            path_split = self._known_host_file.split('/')
-#            path_to_create = '/'.join(path_split[:-1])
+            path_split = self._known_host_file.split('/')
+            path_to_create = '/'.join(path_split[:-1])
 #            file_to_create = path_split[-1]
 
-#            if not os.path.exists(path_to_create):
-#                os.makedirs(path_to_create)
-#                f = file(self._known_host_file, "w")
-#                f.close()
+            if not os.path.exists(path_to_create):
+                os.makedirs(path_to_create)
+                f = file(self._known_host_file, "w")
+                f.close()
 
             self._ssh.load_host_keys(self._known_host_file)
         else:

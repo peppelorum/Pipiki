@@ -172,12 +172,12 @@ if os.environ.has_key('FTPSTORAGE'):
     url = urlparse(os.getenv('FTPSTORAGE'))
 
     SFTP_STORAGE_HOST = url.hostname
-    SFTP_STORAGE_ROOT = '/var/www/cdn/pipiki'
+    SFTP_STORAGE_ROOT = '/var/www/cdn/pipiki/'
     SFTP_STORAGE_PARAMS = {
         'username': url.username,
         'password': url.password
     }
-    SFTP_KNOWN_HOST_FILE = os.path.join(STATIC_ROOT, "ssh", "known_hosts")
+    SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
 
 #    if not os.path.exists(os.path.join(MEDIA_ROOT, "ssh")):
 #        os.makedirs(os.path.join(MEDIA_ROOT, "ssh"))

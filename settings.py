@@ -12,26 +12,18 @@ SITE_ID = 1
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-#MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
 try:
     MEDIA_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "media")
 except :
-#    pass
     MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
-#MEDIA_URL = '/media/'
-#ADMIN_MEDIA_PREFIX = '/media/admin/'
-#
 
 try:
     STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "static")
 except :
-#    pass
     STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
-#STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
-STATIC_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
 
-
-#MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
+STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
+#STATIC_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
 
 MEDIA_URL = '/media/'
 
@@ -50,12 +42,6 @@ STATICFILES_FINDERS = (
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
 )
-
-#STATIC_URL = "/site_media/static/"
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
-#STATICFILES_DIRS = (
-#    os.path.join(PROJECT_ROOT, "static"),
-#)
 
 #COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 COMPRESS_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
@@ -79,8 +65,6 @@ DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
 
 #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-FTP_STORAGE_LOCATION = os.getenv('FTPSTORAGE', '')
 
 if os.environ.has_key('AWS_ACCESS_KEY_ID'):
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
@@ -173,17 +157,17 @@ if os.environ.has_key('FTPSTORAGE'):
     url = urlparse(os.getenv('FTPSTORAGE'))
 
     SFTP_STORAGE_HOST = url.hostname
-    SFTP_STORAGE_ROOT = '/var/www/cdn/pipiki/'
+    SFTP_STORAGE_ROOT = url.path
     SFTP_STORAGE_PARAMS = {
         'username': url.username,
         'password': url.password
     }
-SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
+    SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
 
-#    if not os.path.exists(os.path.join(MEDIA_ROOT, "ssh")):
-#        os.makedirs(os.path.join(MEDIA_ROOT, "ssh"))
-#        f = file(SFTP_KNOWN_HOST_FILE, "w")
-#        f.close()
+    if not os.path.exists(os.path.join(MEDIA_ROOT, "ssh")):
+        os.makedirs(os.path.join(MEDIA_ROOT, "ssh"))
+        f = file(SFTP_KNOWN_HOST_FILE, "w")
+        f.close()
 
 
 if os.environ.has_key('EMAIL_HOST'):

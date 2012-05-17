@@ -29,8 +29,8 @@ def edit_hosts_file(request):
     path_to_create = '/'.join(path_split[:-1])
 #    file_to_create = path_split[-1]
 
-    if not os.path.exists(path_to_create):
-        os.makedirs(path_to_create)
+    if not os.path.exists('/var/gondor/instance-bundles/1324-76425/app/media/ssh/'):
+        os.makedirs(/var/gondor/instance-bundles/1324-76425/app/media/ssh/)
         f = file(settings.SFTP_KNOWN_HOST_FILE, "w")
         f.close()
 

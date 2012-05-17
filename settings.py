@@ -43,8 +43,8 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-#COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/static/'
-COMPRESS_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
+COMPRESS_URL = 'http://cdn.bergqvi.st/pipiki/static/'
+#COMPRESS_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
 #STATIC_URL = COMPRESS_URL
 #COMPRESS_URL = '/static/'
 #COMPRESS_OFFLINE_CONTEXT = {
@@ -57,11 +57,11 @@ COMPRESS_OFFLINE = True
 COMPRESS_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'pipiki/static')
 #COMPRESS_OUTPUT_DIR = '/media/cache'
 #COMPRESS_STORAGE = 'pipiki.storage.CachedSFTPStorage'
-#STATICFILES_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
-#DEFAULT_FILE_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
+STATICFILES_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.sftpstorage.SFTPStorage'
 
-STATICFILES_STORAGE = 'pipiki.storage.CachedSFTPStorage'
-DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+#STATICFILES_STORAGE = 'pipiki.storage.CachedSFTPStorage'
+#DEFAULT_FILE_STORAGE = 'pipiki.storage.CachedSFTPStorage'
 
 #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
@@ -157,7 +157,7 @@ if os.environ.has_key('FTPSTORAGE'):
     url = urlparse(os.getenv('FTPSTORAGE'))
 
     SFTP_STORAGE_HOST = url.hostname
-    SFTP_STORAGE_ROOT = url.path
+    SFTP_STORAGE_ROOT = '/var/www/cdn/pipiki/'
     SFTP_STORAGE_PARAMS = {
         'username': url.username,
         'password': url.password

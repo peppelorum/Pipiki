@@ -31,7 +31,7 @@ def edit_hosts_file(request):
 
     if not os.path.exists(os.path.join(settings.MEDIA_ROOT, 'ssh')):
         os.makedirs(os.path.join(settings.MEDIA_ROOT, 'ssh'))
-        
+
     if not os.path.isfile(settings.SFTP_KNOWN_HOST_FILE):
         f = file(settings.SFTP_KNOWN_HOST_FILE, "w")
         f.close()

@@ -16,7 +16,8 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 try:
     MEDIA_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "media")
 except :
-    pass
+#    pass
+    MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
 #MEDIA_URL = '/media/'
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
@@ -29,7 +30,7 @@ except :
 #STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 STATIC_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
 
-MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
+
 #MEDIA_ROOT = os.getenv('EPIO_DATA_DIRECTORY',PROJECT_ROOT)
 
 MEDIA_URL = '/media/'

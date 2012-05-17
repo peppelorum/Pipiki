@@ -1,6 +1,8 @@
 __author__ = 'peppe'
 
 
+import paramiko
+
 from django.core.files.storage import get_storage_class
 from storages.backends.ftp import FTPStorage
 from storages.backends.sftpstorage import SFTPStorage

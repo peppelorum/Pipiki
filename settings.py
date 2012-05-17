@@ -22,9 +22,9 @@ except :
 #
 
 try:
-    STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "static")
+    STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "static")
 except :
-    pass
+#    pass
     STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
 #STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 STATIC_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'

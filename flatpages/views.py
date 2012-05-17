@@ -18,7 +18,7 @@ from django import forms
 class HostsForm(forms.Form):
     hosts = forms.CharField(widget=forms.Textarea)
 
-@login_required
+#@login_required
 def edit_hosts_file(request):
     context = {}
     user = request.user

@@ -20,7 +20,12 @@ except :
 #MEDIA_URL = '/media/'
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #
-STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+
+try:
+    STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "static")
+except :
+    pass
+    STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
 #STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 STATIC_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
 
@@ -172,7 +177,7 @@ if os.environ.has_key('FTPSTORAGE'):
         'username': url.username,
         'password': url.password
     }
-    SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
+    SFTP_KNOWN_HOST_FILE = os.path.join(STATIC_ROOT, "ssh", "known_hosts")
 
 #    if not os.path.exists(os.path.join(MEDIA_ROOT, "ssh")):
 #        os.makedirs(os.path.join(MEDIA_ROOT, "ssh"))

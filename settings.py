@@ -22,7 +22,7 @@ except :
 #
 
 try:
-    STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "static")
+    STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "static")
 except :
     pass
     STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')

@@ -13,7 +13,10 @@ SITE_ID = 1
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 #MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
-MEDIA_ROOT = os.path.join(os.getenv("GONDOR_DATA_DIR"), "site_media", "media")
+try:
+    MEDIA_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "media")
+except :
+    pass
 #MEDIA_URL = '/media/'
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 #

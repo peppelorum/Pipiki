@@ -1,6 +1,7 @@
 __author__ = 'peppe'
 
 
+import os
 import paramiko
 
 from django.core.files.storage import get_storage_class
@@ -35,8 +36,9 @@ class CachedSFTPStorage(SFTPStorage):
         self._ssh = paramiko.SSHClient()
 
         if self._known_host_file is not None:
-            path = self._known_host_file.split('/')
-            path_split = path.split('/')
+            print 'sadsad', self._known_host_file
+#            path = self._known_host_file.split('/')
+            path_split = self._known_host_file.split('/')
             path_to_create = '/'.join(path_split[:-1])
 #            file_to_create = path_split[-1]
 

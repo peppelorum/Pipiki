@@ -177,7 +177,7 @@ if os.environ.has_key('FTPSTORAGE'):
         'username': url.username,
         'password': url.password
     }
-    SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
+SFTP_KNOWN_HOST_FILE = os.path.join(MEDIA_ROOT, "ssh", "known_hosts")
 
 #    if not os.path.exists(os.path.join(MEDIA_ROOT, "ssh")):
 #        os.makedirs(os.path.join(MEDIA_ROOT, "ssh"))

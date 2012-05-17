@@ -1,13 +1,61 @@
+import os
+
 from django.contrib.flatpages.models import FlatPage
 from django.template import loader, RequestContext
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render_to_response, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from django.core.xheaders import populate_xheaders
 from django.utils.safestring import mark_safe
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.decorators import login_required
 
 DEFAULT_TEMPLATE = 'flatpages/default.html'
+
+
+from django import forms
+
+class HostsForm(forms.Form):
+    hosts = forms.CharField(widget=forms.Textarea)
+
+@login_required
+def edit_hosts_file(request):
+    context = {}
+    user = request.user
+
+#    print 'sadsad', self._known_host_file
+    #            path = self._known_host_file.split('/')
+    path_split = settings.SFTP_KNOWN_HOST_FILE.split('/')
+    path_to_create = '/'.join(path_split[:-1])
+#    file_to_create = path_split[-1]
+
+    if not os.path.exists(path_to_create):
+        os.makedirs(path_to_create)
+        f = file(settings.SFTP_KNOWN_HOST_FILE, "w")
+        f.close()
+
+    if request.method == 'POST':
+        form = HostsForm(request.POST)
+        if form.is_valid():
+#            form.save()
+#            print form.cleaned_data['hosts']
+            f = file(settings.SFTP_KNOWN_HOST_FILE, "w")
+            f.write(form.cleaned_data['hosts'])
+            f.close()
+            return redirect('/edithosts/')
+    else:
+        f = file(settings.SFTP_KNOWN_HOST_FILE, "r")
+        text = f.read()
+        f.close()
+        form = HostsForm(initial={'hosts':text})
+
+    context.update({
+        'form': form,
+#        'tags': Tag.objects.all().order_by('title')
+    })
+    variables = RequestContext(request, context)
+
+    return render_to_response('hosts_edit.html', variables)
 
 # This view is called from FlatpageFallbackMiddleware.process_response
 # when a 404 is raised, which often means CsrfViewMiddleware.process_view

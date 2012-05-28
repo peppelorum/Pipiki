@@ -1,7 +1,7 @@
 
 import os
 
-DEBUG = True
+#DEBUG = True
 
 STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 

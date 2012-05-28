@@ -31,8 +31,6 @@ urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^treenav/', include('treenav.urls.admin')),
 
-    (r'edithosts/', 'flatpages.views.edit_hosts_file'),
-
     url(r'^', include('articles.urls')),
     url(r'^', include('genericdropdown.urls')),
 

@@ -15,12 +15,12 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 try:
     MEDIA_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "media")
 except :
-    MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
+    pass
 
 try:
     STATIC_ROOT = os.path.join(os.environ["GONDOR_DATA_DIR"], "site_media", "static")
 except :
-    STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+    pass
 
 STATIC_URL = 'http://cdn.bergqvi.st/pipiki/static/'
 #STATIC_URL = 'http://pipiki.s3-website-eu-west-1.amazonaws.com/'
@@ -90,7 +90,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'flatpages.middleware.FlatpageFallbackMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+#    'articles.middleware.dynamicsites.DynamicSiteIDMiddleware',
 )
+
+#For the dynamicsites middleware
+CREATE_SITES_AUTOMATICALLY = False
 
 ROOT_URLCONF = 'urls'
 
@@ -130,21 +134,14 @@ INSTALLED_APPS = (
     'django_extensions',
     'storages',
     'compressor',
-#
-    
-
 )
-
 
 DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 ARTICLES_AUTO_TAG = False
 
-
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
 }
-
-
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -152,6 +149,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
 )
 
+SITES_DIR = os.path.join(os.path.dirname(__file__), 'sites')
 
 if os.environ.has_key('FTPSTORAGE'):
     url = urlparse(os.getenv('FTPSTORAGE'))
@@ -180,45 +178,6 @@ if os.environ.has_key('EMAIL_HOST'):
 
     ADMINS = (('Peppe', 'p@bergqvi.st'), )
     MANAGERS = ADMINS
-
-
-#########################################################################
-# Import settings from local_settings.py, if it exists.
-#
-# Put this at the end of settings.py
-
-#try:
-#    import local_settings
-#except ImportError:
-#    print """
-#        -------------------------------------------------------------------------
-#        You need to create a local_settings.py file which needs to contain at least
-#        database connection information.
-#
-#        Copy local_settings_example.py to local_settings.py and edit it.
-#        -------------------------------------------------------------------------
-#        """
-#    import sys
-##    sys.exit(1)
-#else:
-#    # Import any symbols that begin with A-Z. Append to lists any symbols that
-#    # begin with "EXTRA_".
-#    import re
-#    for attr in dir(local_settings):
-#        # print attr
-#        match = re.search('^EXTRA_(\w+)', attr)
-#        if match:
-#            # print "match"
-#            name = match.group(1)
-#            value = getattr(local_settings, attr)
-#            try:
-#                globals()[name] += value
-#            except KeyError:
-#                globals()[name] = value
-#        elif re.search('^[A-Z]', attr):
-#            globals()[attr] = getattr(local_settings, attr)
-
-
 
 try:
     from local_settings import *
